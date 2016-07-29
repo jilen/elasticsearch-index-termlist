@@ -5,13 +5,13 @@ ext {
     pluginName = 'termlist'
     pluginClassname  = 'org.xbib.elasticsearch.plugin.termlist.TermlistPlugin'
     pluginDescription = 'Termlist for Elasticsearch'
-    user = 'charvind'
+    user = 'jilen'
     name = 'elasticsearch-index-termlist'
     scmUrl = 'https://github.com/' + user + '/' + name
     scmConnection = 'scm:git:git://github.com/' + user + '/' + name + '.git'
     scmDeveloperConnection = 'scm:git:git://github.com/' + user + '/' + name + '.git'
     versions = [
-            'elasticsearch' : '2.3.0',
+            'elasticsearch' : '2.3.4',
             'log4j': '2.5',
             'junit' : '4.12',
             'testng' : '6.9.10'

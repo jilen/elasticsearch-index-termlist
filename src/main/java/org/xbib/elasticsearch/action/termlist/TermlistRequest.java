@@ -59,16 +59,6 @@ public final class TermlistRequest extends BroadcastRequest<TermlistRequest> {
     }
 
 
-    @Override
-    public ActionRequestValidationException validate() {
-        ActionRequestValidationException validationException = null;
-        if (term == null || term.isEmpty()) {
-            validationException = addValidationError("text is missing", null);
-        }
-        return validationException;
-    }
-
-
     public void setIndex(String index) {
              this.index = index;
         }
