@@ -139,9 +139,12 @@ public class TransportTermlistAction
       }
       IndexReader reader = searcher.reader();
       Fields fields = MultiFields.getFields(reader);
+      long minDocFreq = request.getRequest().getMinDocFreq();
+      logger.info(fields + "---->" + request.getRequest().getField());
       if (fields != null) {
         for (String field : fields) {
           if (request.getRequest().getField() == null || field.equals(request.getRequest().getField())) {
+
             Terms terms = fields.terms(field);
             // Returns the number of documents that have at least one
             if (terms != null) {
@@ -150,10 +153,7 @@ public class TransportTermlistAction
               while ((text = termsEnum.next()) != null) {
 
                 // skip invalid terms
-                if (termsEnum.docFreq() < request.getRequest().getMinDocFreq()) {
-                  continue;
-                }
-                if (termsEnum.totalTermFreq() < request.getRequest().getMinTotalFreq()) {
+                if (termsEnum.docFreq() < minDocFreq) {
                   continue;
                 }
                 // docFreq() = the number of documents containing the current term

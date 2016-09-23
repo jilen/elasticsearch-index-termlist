@@ -13,7 +13,7 @@ public final class ShardTermlistRequest extends BroadcastShardRequest {
 
     private TermlistRequest request;
 
-    ShardTermlistRequest() {
+    public ShardTermlistRequest() {
     }
 
     public ShardTermlistRequest(String index, ShardId shardId, TermlistRequest request) {
