@@ -17,7 +17,7 @@ class ShardTermlistResponse extends BroadcastShardResponse {
 
     private Map<String, TermInfo> map;
 
-    ShardTermlistResponse() {
+    public ShardTermlistResponse() {
     }
 
     public ShardTermlistResponse(String index, ShardId shardId, int numDocs, Map<String, TermInfo> map) {
