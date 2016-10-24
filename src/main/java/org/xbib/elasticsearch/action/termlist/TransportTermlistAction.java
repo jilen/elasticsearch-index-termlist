@@ -140,7 +140,6 @@ public class TransportTermlistAction
       IndexReader reader = searcher.reader();
       Fields fields = MultiFields.getFields(reader);
       long minDocFreq = request.getRequest().getMinDocFreq();
-      logger.info(fields + "---->" + request.getRequest().getField());
       if (fields != null) {
         for (String field : fields) {
           if (request.getRequest().getField() == null || field.equals(request.getRequest().getField())) {
