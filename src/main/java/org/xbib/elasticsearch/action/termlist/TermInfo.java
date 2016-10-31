@@ -54,8 +54,6 @@ public class TermInfo implements Streamable, ToXContent {
         if (b) {
             setTotalFreq(in.readVLong());
         }
-        summaryStatistics = new SummaryStatistics();
-        summaryStatistics.readFrom(in);
     }
 
     @Override
@@ -72,7 +70,6 @@ public class TermInfo implements Streamable, ToXContent {
         } else {
             out.writeBoolean(false);
         }
-        summaryStatistics.writeTo(out);
     }
 
     public String toString() {
